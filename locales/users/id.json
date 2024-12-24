@@ -1,6 +1,24 @@
 {
-    "Users": {
-        "title": "Halo dunia!",
-        "about": "Buka halaman tentang"
+  "Global": {
+    "view": "Lihat",
+    "back": "Kembali",
+    "edit": "Ubah"
+  },
+  "Users": {
+    "title": "Halo dunia!",
+    "about": "Buka halaman tentang",
+    "client": "Klien",
+    "server": "pelayan"
+  },
+  "UserById": {
+    "title": "Detil Pengguna",
+    "content": {
+      "firstName": "Nama depan",
+      "lastName": "Nama Belakang",
+      "address": "Alamat",
+      "age": "Usia",
+      "phone": "Telepon",
+      "email": "E-mail"
     }
+  }
 }

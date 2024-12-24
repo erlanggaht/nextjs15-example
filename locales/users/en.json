@@ -1,6 +1,24 @@
 {
+  "Global": {
+    "view": "View", 
+    "back": "Back",
+    "edit": "Edit"
+  },
   "Users": {
     "title": "Hello world!",
-    "about": "Go to the about page"
+    "about": "Go to the about page",
+    "client": "Client",
+    "server": "Server"
+  },
+  "UserById": {
+    "title": "Detail User",
+    "content": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "address": "Address",
+      "age": "Age",
+      "phone": "Phone",
+      "email": "Email"
+    }
   }
 }
