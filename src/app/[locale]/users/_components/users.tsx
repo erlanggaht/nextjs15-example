@@ -31,7 +31,7 @@ function Users({ dataUsers }: { dataUsers: TypeDataUsers }) {
     };
 
     return (
-      <div className="border rounded-lg">
+      <div className="border rounded-lg shadow">
         <h1 className="text-xl text-center py-2 capitalize">Data {t(type)}</h1>
         {typeFetch?.[type]?.users?.map((user) => {
           return (

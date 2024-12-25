@@ -8,6 +8,7 @@ import { ActionUpdateUser } from "../ubah/[userId]/action";
 import { showToast } from "../../../../../lib/utils/show-toast";
 import { UsersFormik } from "../validation/formik-schema";
 import { TypeDataUserById } from "../../../../../types/users.types";
+import Button from "@/components/button";
 
 function UserEdit({ dataUserById }: { dataUserById: TypeDataUserById }) {
   const router = useRouter();
@@ -28,6 +29,7 @@ function UserEdit({ dataUserById }: { dataUserById: TypeDataUserById }) {
   });
   const values = formik.values;
   const errors = formik.errors;
+  const isValid = formik.isValid
 
   // Render input
   const renderInput = [
@@ -72,25 +74,23 @@ function UserEdit({ dataUserById }: { dataUserById: TypeDataUserById }) {
                 placeholder={t(`content.${input.name}`)}
                 isError={isTypeError}
               />
-              <p className="text-error"> {isTypeError} </p>
+              <p className="text-error"> {errors[input.name as keyof typeof errors]} </p>
               </div>
             );
           })}
         </div>
         <div className="text-right py-4 flex gap-1 justify-end items-center">
-          <button
-            className="bg-black text-white px-3 py-2 rounded"
+          <Button
             onClick={() => router.push(`/users`)}
           >
             {t_global("back")}
-          </button>
-          <button
+          </Button>
+          <Button
             type="submit"
-            className="bg-black text-white px-3 py-2 rounded disabled:opacity-50"
-            disabled={isPending}
+            disabled={isPending || !isValid }
           >
             {t_global("submit")}
-          </button>
+          </Button>
         </div>
       </form>
     </>
