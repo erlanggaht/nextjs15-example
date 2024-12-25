@@ -91,10 +91,4 @@ Jika Anda ingin meminta fitur spesifik atau contoh penggunaan Next.js 15, silaka
 - [React-Toastify](https://fkhadra.github.io/react-toastify/)
 - [Next-Intl](https://next-intl-docs.vercel.app/)
 
-## 📜 Lisensi
-
-Proyek ini dilisensikan di bawah [MIT License](./LICENSE).
-
----
-
 Selamat membangun dengan **Next.js 15**! 🚀
