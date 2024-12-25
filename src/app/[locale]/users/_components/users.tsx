@@ -2,9 +2,9 @@
 
 import { useTranslations } from "next-intl";
 import { Link, useRouter } from "@/i18n/routing";
-import { TypeDataUsers } from "../page";
 import { useEffect, useState } from "react";
 import UsersAPI from "../../../../../lib/api/users.api";
+import { TypeDataUsers } from "../../../../../types/users.types";
 
 function Users({ dataUsers }: { dataUsers: TypeDataUsers }) {
   const router = useRouter();
@@ -12,7 +12,7 @@ function Users({ dataUsers }: { dataUsers: TypeDataUsers }) {
   const t_global = useTranslations("Global");
 
   // Fetch Client
-  const [usersClient, setUsersClient] = useState<TypeDataUsers>([]);
+  const [usersClient, setUsersClient] = useState<TypeDataUsers>({users: []});
   useEffect(() => {
     const fetchUsers = async () => {
       const response = await UsersAPI.getAll();

@@ -44,7 +44,7 @@ const UsersAPI = {
     params?: TypeBody<string | number>
   ) => {
     try {
-      const response = await axiosBJ.put(`/users/${id}`, body, {
+      const response = await axiosBJ.put(`/userssads/${id}`, body, {
         params: {
           ...params,
         },

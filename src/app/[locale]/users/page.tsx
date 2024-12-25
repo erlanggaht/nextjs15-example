@@ -1,21 +1,9 @@
 import React from "react";
 import Users from "./_components/users";
 import UsersAPI from "../../../../lib/api/users.api";
+import { TypeDataUsers } from "../../../../types/users.types";
 
-export type TypeDataUsers = {
-  users: {
-    id: number;
-    firstName: string;
-    lastName: string;
-    address: {
-      city: string;
-      country: string;
-    };
-    age: number;
-  }[];
-};
-
-export const getUsers = async () => {
+const getUsers = async () => {
   const response = await UsersAPI.getAll({
     page: 1,
   });

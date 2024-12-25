@@ -1,5 +1,5 @@
-import { TypeDataUserById } from "../ubah/[userId]/page";
 import * as Yup from "yup";
+import { TypeDataUserById } from "../../../../../types/users.types";
 
 const initialValues = (dataUserById: TypeDataUserById) => {
   return {

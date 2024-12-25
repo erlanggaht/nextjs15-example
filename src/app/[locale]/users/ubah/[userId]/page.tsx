@@ -1,21 +1,9 @@
 import React from "react";
 import UsersAPI from "../../../../../../lib/api/users.api";
 import UserEdit from "../../_components/user-edit";
+import { TypeDataUserById } from "../../../../../../types/users.types";
 
-export type TypeDataUserById = {
-  id: number | string;
-  firstName: string;
-  lastName: string;
-  address: {
-    city: string;
-    country: string;
-  };
-  age: number;
-  phone: string;
-  email: string;
-};
-
-export const getUserById = async (id: number) => {
+ const getUserById = async (id: number) => {
   const response = await UsersAPI.getById(id);
   return response?.data;
 };

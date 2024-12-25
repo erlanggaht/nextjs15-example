@@ -2,7 +2,7 @@
 import { useRouter } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import React from "react";
-import { TypeDataUserById } from "../lihat/[userId]/page";
+import { TypeDataUserById } from "../../../../../types/users.types";
 
 function UserView({ dataUserById }: { dataUserById: TypeDataUserById }) {
   const router = useRouter();

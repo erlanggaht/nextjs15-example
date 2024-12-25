@@ -5,9 +5,9 @@ import React, { useActionState, useEffect } from "react";
 import { useFormik } from "formik";
 import InputText from "@/components/input";
 import { ActionUpdateUser } from "../ubah/[userId]/action";
-import { TypeDataUserById } from "../ubah/[userId]/page";
 import { showToast } from "../../../../../lib/utils/show-toast";
 import { UsersFormik } from "../validation/formik-schema";
+import { TypeDataUserById } from "../../../../../types/users.types";
 
 function UserEdit({ dataUserById }: { dataUserById: TypeDataUserById }) {
   const router = useRouter();
@@ -47,8 +47,11 @@ function UserEdit({ dataUserById }: { dataUserById: TypeDataUserById }) {
 
   // Redirect jika berhasil update
   useEffect(() => {
-    if (message?.status) {
-      showToast("success", message.status);
+    if (message?.success) {
+      showToast("success", message?.message);
+      // router.push('/users')
+    } else {
+      showToast("error", message?.message);
       // router.push('/users')
     }
   }, [message]);
@@ -74,7 +77,6 @@ function UserEdit({ dataUserById }: { dataUserById: TypeDataUserById }) {
             );
           })}
         </div>
-        {JSON.stringify(errors.age)}
         <div className="text-right py-4 flex gap-1 justify-end items-center">
           <button
             className="bg-black text-white px-3 py-2 rounded"
