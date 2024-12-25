@@ -2,7 +2,8 @@
   "Global": {
     "view": "View", 
     "back": "Back",
-    "edit": "Edit"
+    "edit": "Edit",
+    "submit": "Submit"
   },
   "Users": {
     "title": "Hello world!",

@@ -10,16 +10,21 @@
   },
   "dependencies": {
     "axios": "^1.7.9",
+    "classnames": "^2.5.1",
+    "formik": "^2.4.6",
     "next": "15.1.2",
     "next-intl": "^3.26.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-toastify": "^11.0.2",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "daisyui": "^4.12.22",
     "eslint": "^9",
     "eslint-config-next": "15.1.2",
     "postcss": "^8",

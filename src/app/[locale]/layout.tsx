@@ -5,7 +5,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import LayoutClient from "./layoutClient";
+import LayoutClient from "./layout-client";
+import ToastProvider from "../../../lib/providers/toast-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,9 +44,11 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased p-6`}
       >
         <LayoutClient locale={locale}>
-          <NextIntlClientProvider messages={messages} locale={locale}>
-            {children}
-          </NextIntlClientProvider>
+          <ToastProvider>
+            <NextIntlClientProvider messages={messages} locale={locale}>
+              {children}
+            </NextIntlClientProvider>
+          </ToastProvider>
         </LayoutClient>
       </body>
     </html>

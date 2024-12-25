@@ -2,7 +2,7 @@
 import { useRouter } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import React from "react";
-import { TypeDataUserById } from "../lihat/[...userId]/page";
+import { TypeDataUserById } from "../lihat/[userId]/page";
 
 function UserView({ dataUserById }: { dataUserById: TypeDataUserById }) {
   const router = useRouter();
@@ -38,7 +38,7 @@ function UserView({ dataUserById }: { dataUserById: TypeDataUserById }) {
   ];
 
   return (
-    <>
+    <div>
       <h1 className="text-center text-2xl uppercase py-4">{t("title")}</h1>
       <div className="border rounded-lg px-5">
         {detailDatas.map((data, index) => {
@@ -59,7 +59,7 @@ function UserView({ dataUserById }: { dataUserById: TypeDataUserById }) {
           {t_global("back")}
         </button>
       </div>
-    </>
+    </div>
   );
 }
 

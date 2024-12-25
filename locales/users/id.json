@@ -2,7 +2,8 @@
   "Global": {
     "view": "Lihat",
     "back": "Kembali",
-    "edit": "Ubah"
+    "edit": "Ubah",
+    "submit": "Simpan"
   },
   "Users": {
     "title": "Halo dunia!",
@@ -13,7 +14,7 @@
   "UserById": {
     "title": "Detil Pengguna",
     "content": {
-      "firstName": "Nama depan",
+      "firstName": "Nama Depan",
       "lastName": "Nama Belakang",
       "address": "Alamat",
       "age": "Usia",
