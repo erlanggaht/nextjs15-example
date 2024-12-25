@@ -12,7 +12,7 @@ function Users({ dataUsers }: { dataUsers: TypeDataUsers }) {
   const t_global = useTranslations("Global");
 
   // Fetch Client
-  const [usersClient, setUsersClient] = useState<TypeDataUsers>({users: []});
+  const [usersClient, setUsersClient] = useState<TypeDataUsers>({ users: [] });
   useEffect(() => {
     const fetchUsers = async () => {
       const response = await UsersAPI.getAll();
@@ -46,22 +46,24 @@ function Users({ dataUsers }: { dataUsers: TypeDataUsers }) {
                 <Link
                   href={`/users/lihat/${user.id}`}
                   prefetch={false}
-                  onMouseEnter={() => router.prefetch(`/users/lihat/${user.id}`)}
+                  onMouseEnter={() =>
+                    router.prefetch(`/users/lihat/${user.id}`)
+                  }
                 >
                   <button className="bg-black text-white px-3 py-2 rounded">
-                    {t_global('view')}
+                    {t_global("view")}
                   </button>
-                 
                 </Link>
                 <Link
                   href={`/users/ubah/${user.id}`}
                   prefetch={false}
-                  onMouseEnter={() => router.prefetch(`/users/lihat/${user.id}`)}
+                  onMouseEnter={() =>
+                    router.prefetch(`/users/lihat/${user.id}`)
+                  }
                 >
                   <button className="bg-black text-white px-3 py-2 rounded">
-                    {t_global('edit')}
+                    {t_global("edit")}
                   </button>
-                 
                 </Link>
               </div>
             </div>
@@ -76,7 +78,11 @@ function Users({ dataUsers }: { dataUsers: TypeDataUsers }) {
       <h1 className="text-center text-2xl uppercase">{t("title")}</h1>
       <main className="grid grid-cols-2 gap-2 py-6">
         <section>{RenderData("server")}</section>
-        <section>{RenderData("client")}</section>
+        {usersClient.users.at(0) ? (
+          <section>{RenderData("client")}</section>
+        ) : (
+          <div className="skeleton h-full w-full"></div>
+        )}
       </main>
     </div>
   );

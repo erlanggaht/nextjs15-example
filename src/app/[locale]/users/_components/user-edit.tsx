@@ -61,7 +61,7 @@ function UserEdit({ dataUserById }: { dataUserById: TypeDataUserById }) {
   return (
     <>
       <form action={formAction}>
-        <h1 className="text-center text-2xl uppercase py-4">{t("title")}</h1>
+        <h1 className="text-center text-2xl uppercase py-4">{t_global("edit")} {t_global("user")}</h1>
         <div className="border rounded-lg p-5 flex gap-2">
           {renderInput.map((input, index) => {
             const isTypeError = typeof errors[input.name as keyof typeof errors] === 'string'
