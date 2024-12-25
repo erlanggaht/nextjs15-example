@@ -49,18 +49,6 @@ Selamat datang di **Contoh Proyek Next.js 15**! Proyek ini menunjukkan aplikasi 
 
    Buka [http://localhost:3000](http://localhost:3000) di browser Anda untuk melihat aplikasi berjalan.
 
-## 📂 Struktur Folder
-
-```plaintext
-├── components    # Komponen UI yang dapat digunakan kembali
-├── pages         # Halaman Next.js
-├── middleware    # Middleware kustom untuk menangani permintaan
-├── hooks         # Hooks kustom (contoh: useActionState)
-├── styles        # Gaya Tailwind dan DaisyUI
-├── utils         # Fungsi utilitas dan konfigurasi
-└── ...
-```
-
 ## 💡 Contoh Penggunaan
 
 ### Pengambilan Data dengan Formik
