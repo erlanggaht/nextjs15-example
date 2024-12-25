@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Contoh Proyek Next.js 15
 
-## Getting Started
+Selamat datang di **Contoh Proyek Next.js 15**! Proyek ini menunjukkan aplikasi fungsional yang memanfaatkan fitur modern dan integrasi menggunakan Next.js 15 beserta alat-alat populer lainnya.
 
-First, run the development server:
+## 🌟 Fitur dan Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Teknologi Utama:
+- **Next.js 15** dengan Server Actions dan Mutations
+- **TypeScript** untuk pengetikan statis
+- **Tailwind CSS** dan **DaisyUI** untuk desain yang responsif dan menarik
+- **Formik** untuk pengelolaan formulir
+- **React-Toastify** untuk notifikasi yang elegan
+- **Axios** untuk permintaan HTTP
+- **ESLint** untuk menjaga kualitas kode
+- **Next-Intl** untuk internasionalisasi dan lokalisasi
+
+### Fitur yang Diimplementasikan:
+1. **Pengambilan Data**
+   - Server Actions dan Mutations yang terintegrasi dengan Formik
+   - Pengambilan data di Komponen Server dan Komponen Klien
+
+2. **Middleware**
+   - Middleware kustom untuk menangani permintaan dan meningkatkan routing Next.js
+   - Terintegrasi dengan Next-Intl untuk pengelolaan lokalisasi
+
+3. **Hooks Kustom**
+   - `useActionState` untuk mengelola status tindakan secara efisien
+
+## 🚀 Memulai
+
+1. **Kloning repositori**:
+   ```bash
+   git clone https://github.com/your-username/nextjs15-example.git
+   ```
+
+2. **Instal dependensi**:
+   ```bash
+   npm install
+   # atau
+   yarn install
+   ```
+
+3. **Jalankan server pengembangan**:
+   ```bash
+   npm run dev
+   # atau
+   yarn dev
+   ```
+
+   Buka [http://localhost:3000](http://localhost:3000) di browser Anda untuk melihat aplikasi berjalan.
+
+## 📂 Struktur Folder
+
+```plaintext
+├── components    # Komponen UI yang dapat digunakan kembali
+├── pages         # Halaman Next.js
+├── middleware    # Middleware kustom untuk menangani permintaan
+├── hooks         # Hooks kustom (contoh: useActionState)
+├── styles        # Gaya Tailwind dan DaisyUI
+├── utils         # Fungsi utilitas dan konfigurasi
+└── ...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 💡 Contoh Penggunaan
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Pengambilan Data dengan Formik
+- Contoh server action dan mutation untuk pengiriman formulir
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Pengambilan Data di Komponen
+- Pola pengambilan data di sisi server dan klien
 
-## Learn More
+### Middleware
+- Middleware kustom menggunakan API Next.js 15 untuk routing lanjutan dan lokalisasi
 
-To learn more about Next.js, take a look at the following resources:
+### useActionState
+- Manajemen status yang efisien untuk interaksi pengguna
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎯 Berkontribusi
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Punya ide untuk fitur atau contoh baru? Jangan ragu untuk berkontribusi!
 
-## Deploy on Vercel
+### Permintaan Fitur atau Contoh
+Jika Anda ingin meminta fitur spesifik atau contoh penggunaan Next.js 15, silakan buat issue baru di bagian **[Issues](https://github.com/your-username/nextjs15-example/issues)** di repositori ini.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Dibangun Dengan
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js 15](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [DaisyUI](https://daisyui.com/)
+- [Formik](https://formik.org/)
+- [React-Toastify](https://fkhadra.github.io/react-toastify/)
+- [Next-Intl](https://next-intl-docs.vercel.app/)
+
+## 📜 Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](./LICENSE).
+
+---
+
+Selamat membangun dengan **Next.js 15**! 🚀
