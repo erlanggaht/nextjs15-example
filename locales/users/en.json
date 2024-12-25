@@ -3,7 +3,8 @@
     "view": "View", 
     "back": "Back",
     "edit": "Edit",
-    "submit": "Submit"
+    "submit": "Submit",
+    "user" : "User"
   },
   "Users": {
     "title": "Hello world!",
