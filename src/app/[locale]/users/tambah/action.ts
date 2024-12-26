@@ -1,10 +1,9 @@
 "use server";
 
 import axios from "axios";
-import UsersAPI from "../../../../../../lib/api/users.api";
+import UsersAPI from "../../../../../lib/api/users.api";
 
-export async function ActionUpdateUser(
-  userId: string | number,
+export async function ActionCreateUser(
   formData: FormData
 ) {
   const firstName = formData.get("firstName") as string;
@@ -16,14 +15,13 @@ export async function ActionUpdateUser(
     age: age ?? 0,
   };
 
-  console.log(userId)
   try {
-    const response = await UsersAPI.update(userId, bodyData);
+    const response = await UsersAPI.create(bodyData);
     if(response?.status === 200 || response?.status === 201) {
-      return {error: false, status: response?.status, success: true,message: "Data updated successfully"}
+      return {error: false, status: response?.status, success: true,message: "Data create successfully"}
     }
   } catch (error) {
-      if(axios.isAxiosError(error)) {
+    if(axios.isAxiosError(error)) {
         return {error: true, status: error?.status, success: false, message: error.message}
       }
   }

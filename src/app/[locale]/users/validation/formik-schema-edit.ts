@@ -23,7 +23,7 @@ const validationSchema = () => {
   });
 };
 
-export const UsersFormik = {
+export const UsersFormikEdit = {
   initialValues,
   validationSchema,
 };

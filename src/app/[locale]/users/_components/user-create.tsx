@@ -1,35 +1,32 @@
 "use client";
-
-import { useTranslations } from "next-intl";
 import React, { useActionState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import { useFormik } from "formik";
-import { ActionUpdateUser } from "../ubah/[userId]/action";
-import { UsersFormikEdit } from "../validation/formik-schema-edit";
-import { TypeDataUserById } from "../../../../../types/users.types";
 import { Input } from "@/components/input";
+import { UsersFormikCreate } from "../validation/formik-schema-create";
+import { ActionCreateUser } from "../tambah/action";
 import FormView from "@/components/form-view";
 import { showToast } from "../../../../../lib/utils/show-toast";
 
-function UserEdit({ dataUserById }: { dataUserById: TypeDataUserById }) {
+function UserTambah() {
   const t_global = useTranslations("Global");
   const t = useTranslations("UserById");
 
   // Handle Form Action
   const [message, formAction, isPending] = useActionState(
-    (_: any, payload: any) => ActionUpdateUser(dataUserById.id, payload),
+    (_: any, payload: any) => ActionCreateUser(payload),
     null
   );
 
   // Formik
   const formik = useFormik({
-    initialValues: UsersFormikEdit.initialValues(dataUserById),
-    validationSchema: UsersFormikEdit.validationSchema(),
-    validateOnMount: true,
+    initialValues: UsersFormikCreate.initialValues(),
+    validationSchema: UsersFormikCreate.validationSchema(),
+    validateOnMount: true, // agar validasi saat pertama kali terdetect
     onSubmit: async (values) => {
       console.log(values);
     },
   });
-  const values = formik.values;
   const errors = formik.errors;
   const isValid = formik.isValid;
 
@@ -37,15 +34,15 @@ function UserEdit({ dataUserById }: { dataUserById: TypeDataUserById }) {
   const renderInput = [
     {
       name: "firstName",
-      value: values.firstName,
+      value: "",
     },
     {
       name: "lastName",
-      value: values.lastName,
+      value: "",
     },
     {
       name: "age",
-      value: values.age,
+      value: "",
     },
   ];
 
@@ -89,4 +86,4 @@ function UserEdit({ dataUserById }: { dataUserById: TypeDataUserById }) {
   );
 }
 
-export default UserEdit;
+export default UserTambah;

@@ -3,6 +3,7 @@
     "view": "View", 
     "back": "Back",
     "edit": "Edit",
+    "create": "Create",
     "submit": "Submit",
     "user" : "User"
   },

@@ -5,6 +5,7 @@ import { Link, useRouter } from "@/i18n/routing";
 import { useEffect, useState } from "react";
 import UsersAPI from "../../../../../lib/api/users.api";
 import { TypeDataUsers } from "../../../../../types/users.types";
+import { Button } from "@/components/button";
 
 function Users({ dataUsers }: { dataUsers: TypeDataUsers }) {
   const router = useRouter();
@@ -32,6 +33,11 @@ function Users({ dataUsers }: { dataUsers: TypeDataUsers }) {
 
     return (
       <div className="border rounded-lg shadow">
+        <div className="p-2 text-right">
+        <Button onClick={() => router.push(`/users/tambah`)}>
+          {t_global("create")}
+        </Button>
+        </div>
         <h1 className="text-xl text-center py-2 capitalize">Data {t(type)}</h1>
         {typeFetch?.[type]?.users?.map((user) => {
           return (
@@ -50,9 +56,7 @@ function Users({ dataUsers }: { dataUsers: TypeDataUsers }) {
                     router.prefetch(`/users/lihat/${user.id}`)
                   }
                 >
-                  <button className="bg-black text-white px-3 py-2 rounded">
-                    {t_global("view")}
-                  </button>
+                  <Button>{t_global("view")}</Button>
                 </Link>
                 <Link
                   href={`/users/ubah/${user.id}`}
@@ -61,9 +65,7 @@ function Users({ dataUsers }: { dataUsers: TypeDataUsers }) {
                     router.prefetch(`/users/lihat/${user.id}`)
                   }
                 >
-                  <button className="bg-black text-white px-3 py-2 rounded">
-                    {t_global("edit")}
-                  </button>
+                  <Button>{t_global("edit")}</Button>
                 </Link>
               </div>
             </div>
@@ -81,7 +83,7 @@ function Users({ dataUsers }: { dataUsers: TypeDataUsers }) {
         {usersClient.users.at(0) ? (
           <section>{RenderData("client")}</section>
         ) : (
-          <div className="skeleton h-full w-full"></div>
+          <div className="skeleton h-full w-full">Loading..</div>
         )}
       </main>
     </div>
